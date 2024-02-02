@@ -39,21 +39,30 @@ void loop()
     if (isDataComplete)
     {
       receivedChars[ndx] = '\0'; // terminate string
-      // Parse buffer and print as before
-
-      // Parse float strings
       char *strtokIndex;
+      // strtokIndex = strtok(receivedChars, "|");
+      // float float1 = atof(strtokIndex);
+
+      // strtokIndex = strtok(NULL, "|");
+      // float float2 = atof(strtokIndex);
+
+      // strtokIndex = strtok(NULL, "|");
+      // float float3 = atof(strtokIndex);
+
+      // strtokIndex = strtok(NULL, "|");
+      // float float4 = atof(strtokIndex);
+
       strtokIndex = strtok(receivedChars, "|");
-      float float1 = atof(strtokIndex);
+      int float1 = atoi(strtokIndex);
 
       strtokIndex = strtok(NULL, "|");
-      float float2 = atof(strtokIndex);
+      int float2 = atoi(strtokIndex);
 
       strtokIndex = strtok(NULL, "|");
-      float float3 = atof(strtokIndex);
+      int float3 = atoi(strtokIndex);
 
       strtokIndex = strtok(NULL, "|");
-      float float4 = atof(strtokIndex);
+      int float4 = atoi(strtokIndex);
 
       // Print floats
       Serial.print("Received floats: ");
