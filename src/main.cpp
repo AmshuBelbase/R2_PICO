@@ -1,4 +1,10 @@
-#include <Arduino.h>
+// #include <Arduino.h>
+#include <CytronMotorDriver.h>
+
+CytronMD motor2(PWM_DIR, 22, 20); // front right - m2 - 1
+CytronMD motor1(PWM_DIR, 11, 13); // front left - m1 - 2
+CytronMD motor4(PWM_DIR, 8, 12);  // back left - m4 - 3
+CytronMD motor3(PWM_DIR, 26, 21); // back right - m3 - 4
 
 void setup()
 {
@@ -40,39 +46,33 @@ void loop()
     {
       receivedChars[ndx] = '\0'; // terminate string
       char *strtokIndex;
-      // strtokIndex = strtok(receivedChars, "|");
-      // float float1 = atof(strtokIndex);
-
-      // strtokIndex = strtok(NULL, "|");
-      // float float2 = atof(strtokIndex);
-
-      // strtokIndex = strtok(NULL, "|");
-      // float float3 = atof(strtokIndex);
-
-      // strtokIndex = strtok(NULL, "|");
-      // float float4 = atof(strtokIndex);
 
       strtokIndex = strtok(receivedChars, "|");
-      int float1 = atoi(strtokIndex);
+      int w2 = atoi(strtokIndex);
 
       strtokIndex = strtok(NULL, "|");
-      int float2 = atoi(strtokIndex);
+      int w1 = atoi(strtokIndex);
 
       strtokIndex = strtok(NULL, "|");
-      int float3 = atoi(strtokIndex);
+      int w4 = atoi(strtokIndex);
 
       strtokIndex = strtok(NULL, "|");
-      int float4 = atoi(strtokIndex);
+      int w3 = atoi(strtokIndex);
 
       // Print floats
       Serial.print("Received floats: ");
-      Serial.print(float1);
-      Serial.print(", ");
-      Serial.print(float2);
-      Serial.print(", ");
-      Serial.print(float3);
-      Serial.print(", ");
-      Serial.println(float4);
+      Serial.print(w2);
+      Serial.print(" ");
+      Serial.print(w1);
+      Serial.print(" ");
+      Serial.print(w4);
+      Serial.print(" ");
+      Serial.println(w3);
+
+      motor1.setSpeed(w1 * 5);
+      motor2.setSpeed(w2 * 5);
+      motor3.setSpeed(w3 * 5);
+      motor4.setSpeed(w4 * 5);
 
       ndx = 0;
       isDataComplete = false;
