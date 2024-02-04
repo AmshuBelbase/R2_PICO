@@ -1,10 +1,10 @@
 // #include <Arduino.h>
 #include <CytronMotorDriver.h>
 
-CytronMD motor2(PWM_DIR, 22, 20); // front right - m2 - 1
-CytronMD motor1(PWM_DIR, 11, 13); // front left - m1 - 2
-CytronMD motor4(PWM_DIR, 8, 12);  // back left - m4 - 3
-CytronMD motor3(PWM_DIR, 26, 21); // back right - m3 - 4
+CytronMD motor1(PWM_DIR, 21, 26); // front left - m1
+CytronMD motor2(PWM_DIR, 12, 8);  // front right - m2
+CytronMD motor3(PWM_DIR, 13, 11); // back right - m3
+CytronMD motor4(PWM_DIR, 20, 22); // back left - m4
 
 void setup()
 {
@@ -48,32 +48,36 @@ void loop()
       char *strtokIndex;
 
       strtokIndex = strtok(receivedChars, "|");
-      int w2 = atoi(strtokIndex);
+      int w2 = atoi(strtokIndex); // front_right
 
       strtokIndex = strtok(NULL, "|");
-      int w1 = atoi(strtokIndex);
+      int w1 = atoi(strtokIndex); // front_left
 
       strtokIndex = strtok(NULL, "|");
-      int w4 = atoi(strtokIndex);
+      int w4 = atoi(strtokIndex); // back_left
 
       strtokIndex = strtok(NULL, "|");
-      int w3 = atoi(strtokIndex);
+      int w3 = atoi(strtokIndex); // back_right
 
-      // Print floats
-      Serial.print("Received floats: ");
+      // Print
+      Serial.print("Received floats: FR");
       Serial.print(w2);
-      Serial.print(" ");
+      Serial.print(" FL:");
       Serial.print(w1);
-      Serial.print(" ");
+      Serial.print(" BL:");
       Serial.print(w4);
-      Serial.print(" ");
+      Serial.print(" BR:");
       Serial.println(w3);
 
       motor1.setSpeed(w1 * 5);
       motor2.setSpeed(w2 * 5);
       motor3.setSpeed(w3 * 5);
       motor4.setSpeed(w4 * 5);
-
+      delay(500);
+      motor1.setSpeed(w1 * 0);
+      motor2.setSpeed(w2 * 0);
+      motor3.setSpeed(w3 * 0);
+      motor4.setSpeed(w4 * 0);
       ndx = 0;
       isDataComplete = false;
     }
