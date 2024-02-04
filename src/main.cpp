@@ -60,20 +60,20 @@ void loop()
       int w3 = atoi(strtokIndex); // back_right
 
       // Print
-      Serial.print("Received floats: FR");
+      Serial.print("Received floats: FR: ");
       Serial.print(w2);
-      Serial.print(" FL:");
+      Serial.print(" FL: ");
       Serial.print(w1);
-      Serial.print(" BL:");
+      Serial.print(" BL: ");
       Serial.print(w4);
-      Serial.print(" BR:");
+      Serial.print(" BR: ");
       Serial.println(w3);
 
-      motor1.setSpeed(w1 * 5);
-      motor2.setSpeed(w2 * 5);
-      motor3.setSpeed(w3 * 5);
-      motor4.setSpeed(w4 * 5);
-      delay(500);
+      motor1.setSpeed(w1 * 2.5);
+      motor2.setSpeed(w2 * 2.5);
+      motor3.setSpeed(w3 * 2.5);
+      motor4.setSpeed(w4 * 2.5);
+      delay(200);
       motor1.setSpeed(w1 * 0);
       motor2.setSpeed(w2 * 0);
       motor3.setSpeed(w3 * 0);
