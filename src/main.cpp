@@ -48,36 +48,36 @@ void loop()
       char *strtokIndex;
 
       strtokIndex = strtok(receivedChars, "|");
-      int w2 = atoi(strtokIndex); // front_right
+      int fr = atoi(strtokIndex); // front_right
 
       strtokIndex = strtok(NULL, "|");
-      int w1 = atoi(strtokIndex); // front_left
+      int fl = atoi(strtokIndex); // front_left
 
       strtokIndex = strtok(NULL, "|");
-      int w4 = atoi(strtokIndex); // back_left
+      int bl = atoi(strtokIndex); // back_left
 
       strtokIndex = strtok(NULL, "|");
-      int w3 = atoi(strtokIndex); // back_right
+      int br = atoi(strtokIndex); // back_right
 
       // Print
       Serial.print("Received floats: FR: ");
-      Serial.print(w2);
+      Serial.print(fr);
       Serial.print(" FL: ");
-      Serial.print(w1);
+      Serial.print(fl);
       Serial.print(" BL: ");
-      Serial.print(w4);
+      Serial.print(bl);
       Serial.print(" BR: ");
-      Serial.println(w3);
+      Serial.println(br);
 
-      motor1.setSpeed(w1 * 2.5);
-      motor2.setSpeed(w2 * 2.5);
-      motor3.setSpeed(w3 * 2.5);
-      motor4.setSpeed(w4 * 2.5);
-      delay(200);
-      motor1.setSpeed(w1 * 0);
-      motor2.setSpeed(w2 * 0);
-      motor3.setSpeed(w3 * 0);
-      motor4.setSpeed(w4 * 0);
+      motor1.setSpeed(fl * 1);
+      motor2.setSpeed(fr * 1);
+      motor3.setSpeed(br * 1);
+      motor4.setSpeed(bl * 1);
+      delay(950);
+      motor1.setSpeed(fl * 0);
+      motor2.setSpeed(fr * 0);
+      motor3.setSpeed(br * 0);
+      motor4.setSpeed(bl * 0);
       ndx = 0;
       isDataComplete = false;
     }
