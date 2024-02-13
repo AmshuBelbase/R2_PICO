@@ -68,7 +68,7 @@ void loop()
       Serial.print(bl);
       Serial.print(" BR: ");
       Serial.println(br);
-
+      motor1.setSpeed(50 * 1);
       motor1.setSpeed(fl * 1);
       motor2.setSpeed(fr * 1);
       motor3.setSpeed(br * 1);
