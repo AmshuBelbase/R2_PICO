@@ -1,0 +1,7 @@
+[
+{
+  "directory": "/home/amshu/Documents/PlatformIO/Projects/new/build",
+  "command": "/usr/bin/gcc  -I/home/amshu/Documents/PlatformIO/Projects/new/.pio/libdeps/pico/Unity/src -I/home/amshu/Documents/PlatformIO/Projects/new/build -g -Waddress -Waggregate-return -Wformat-nonliteral -Wformat-security -Wformat -Winit-self -Wmissing-declarations -Wmissing-include-dirs -Wno-multichar -Wno-parentheses -Wno-type-limits -Wno-unused-parameter -Wunreachable-code -Wwrite-strings -Wpointer-arith -Werror -Wall -std=c11 -o CMakeFiles/unity.dir/src/unity.c.o -c /home/amshu/Documents/PlatformIO/Projects/new/.pio/libdeps/pico/Unity/src/unity.c",
+  "file": "/home/amshu/Documents/PlatformIO/Projects/new/.pio/libdeps/pico/Unity/src/unity.c"
+}
+]

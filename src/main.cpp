@@ -1,10 +1,10 @@
 // #include <Arduino.h>
 #include <CytronMotorDriver.h>
 
-CytronMD motor1(PWM_DIR, 21, 26); // front left - m1
-CytronMD motor2(PWM_DIR, 12, 8);  // front right - m2
-CytronMD motor3(PWM_DIR, 13, 11); // back right - m3
-CytronMD motor4(PWM_DIR, 20, 22); // back left - m4
+CytronMD motor1(PWM_DIR, 7, 3);   // front right - m1
+CytronMD motor2(PWM_DIR, 6, 2);   // back right - m2
+CytronMD motor3(PWM_DIR, 21, 27); // back left - m3
+CytronMD motor4(PWM_DIR, 20, 26); // front left - m4
 
 void setup()
 {
@@ -68,16 +68,15 @@ void loop()
       Serial.print(bl);
       Serial.print(" BR: ");
       Serial.println(br);
-      motor1.setSpeed(50 * 1);
-      motor1.setSpeed(fl * 1);
-      motor2.setSpeed(fr * 1);
-      motor3.setSpeed(br * 1);
-      motor4.setSpeed(bl * 1);
-      delay(950);
-      motor1.setSpeed(fl * 0);
-      motor2.setSpeed(fr * 0);
-      motor3.setSpeed(br * 0);
-      motor4.setSpeed(bl * 0);
+      motor1.setSpeed(fr * 1);
+      motor2.setSpeed(br * 1);
+      motor3.setSpeed(bl * 1);
+      motor4.setSpeed(fl * 1);
+      // delay(950);
+      // motor1.setSpeed(fr * 0);
+      // motor2.setSpeed(br * 0);
+      // motor3.setSpeed(bl * 0);
+      // motor4.setSpeed(fl * 0);
       ndx = 0;
       isDataComplete = false;
     }
