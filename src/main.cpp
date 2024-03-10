@@ -48,286 +48,21 @@ void loop()
       char *strtokIndex;
 
       strtokIndex = strtok(receivedChars, "|");
-      int fr = atoi(strtokIndex); // front_right
+      int fright = atoi(strtokIndex); // front_right
 
       strtokIndex = strtok(NULL, "|");
-      int fl = atoi(strtokIndex); // front_left
+      int fleft = atoi(strtokIndex); // front_left
 
       strtokIndex = strtok(NULL, "|");
-      int bl = atoi(strtokIndex); // back_left
+      int bleft = atoi(strtokIndex); // back_left
 
       strtokIndex = strtok(NULL, "|");
-      int br = atoi(strtokIndex); // back_right
+      int bright = atoi(strtokIndex); // back_right
 
-      // // Print
-      if (fr > 0 && fr < 25)
-      {
-        fr = fr + 25;
-        if (fl > 0)
-        {
-          fl = fl + 25;
-        }
-        if (bl > 0)
-        {
-          bl = bl + 25;
-        }
-        if (br > 0)
-        {
-          br = br + 25;
-        }
-
-        if (fl < 0)
-        {
-          fl = fl - 25;
-        }
-        if (bl < 0)
-        {
-          bl = bl - 25;
-        }
-        if (br < 0)
-        {
-          br = br - 25;
-        }
-      }
-      if (fr < 0 && fr > -25)
-      {
-        fr = fr - 25;
-        if (fl > 0)
-        {
-          fl = fl + 25;
-        }
-        if (bl > 0)
-        {
-          bl = bl + 25;
-        }
-        if (br > 0)
-        {
-          br = br + 25;
-        }
-
-        if (fl < 0)
-        {
-          fl = fl - 25;
-        }
-        if (bl < 0)
-        {
-          bl = bl - 25;
-        }
-        if (br < 0)
-        {
-          br = br - 25;
-        }
-      }
-
-      if (fl > 0 && fl < 25)
-      {
-        fl = fl + 25;
-        if (fr > 0)
-        {
-          fr = fr + 25;
-        }
-        if (bl > 0)
-        {
-          bl = bl + 25;
-        }
-        if (br > 0)
-        {
-          br = br + 25;
-        }
-
-        if (fr < 0)
-        {
-          fr = fr - 25;
-        }
-        if (bl < 0)
-        {
-          bl = bl - 25;
-        }
-        if (br < 0)
-        {
-          br = br - 25;
-        }
-      }
-      if (fl < 0 && fl > -25)
-      {
-        fl = fl - 25;
-        if (fr > 0)
-        {
-          fr = fr + 25;
-        }
-        if (bl > 0)
-        {
-          bl = bl + 25;
-        }
-        if (br > 0)
-        {
-          br = br + 25;
-        }
-
-        if (fr < 0)
-        {
-          fr = fr - 25;
-        }
-        if (bl < 0)
-        {
-          bl = bl - 25;
-        }
-        if (br < 0)
-        {
-          br = br - 25;
-        }
-      }
-
-      if (bl > 0 && bl < 25)
-      {
-        bl = bl + 25;
-        if (fr > 0)
-        {
-          fr = fr + 25;
-        }
-        if (fl > 0)
-        {
-          fl = fl + 25;
-        }
-        if (br > 0)
-        {
-          br = br + 25;
-        }
-
-        if (fr < 0)
-        {
-          fr = fr - 25;
-        }
-        if (fl < 0)
-        {
-          fl = fl - 25;
-        }
-        if (br < 0)
-        {
-          br = br - 25;
-        }
-      }
-      if (bl < 0 && bl > -25)
-      {
-        bl = bl - 25;
-        if (fr > 0)
-        {
-          fr = fr + 25;
-        }
-        if (fl > 0)
-        {
-          fl = fl + 25;
-        }
-        if (br > 0)
-        {
-          br = br + 25;
-        }
-
-        if (fr < 0)
-        {
-          fr = fr - 25;
-        }
-        if (fl < 0)
-        {
-          fl = fl - 25;
-        }
-        if (br < 0)
-        {
-          br = br - 25;
-        }
-      }
-
-      if (br > 0 && br < 25)
-      {
-        br = br + 25;
-        if (fr > 0)
-        {
-          fr = fr + 25;
-        }
-        if (fl > 0)
-        {
-          fl = fl + 25;
-        }
-        if (bl > 0)
-        {
-          bl = bl + 25;
-        }
-
-        if (fr < 0)
-        {
-          fr = fr - 25;
-        }
-        if (fl < 0)
-        {
-          fl = fl - 25;
-        }
-        if (bl < 0)
-        {
-          bl = bl - 25;
-        }
-      }
-      if (br < 0 && br > -25)
-      {
-        br = br - 25;
-        if (fr > 0)
-        {
-          fr = fr + 25;
-        }
-        if (fl > 0)
-        {
-          fl = fl + 25;
-        }
-        if (bl > 0)
-        {
-          bl = bl + 25;
-        }
-
-        if (fr < 0)
-        {
-          fr = fr - 25;
-        }
-        if (fl < 0)
-        {
-          fl = fl - 25;
-        }
-        if (bl < 0)
-        {
-          bl = bl - 25;
-        }
-      }
-
-      // if (fr > 0)
-      // {
-      //   fr = fr + 25;
-      // }
-      // if (fl > 0)
-      // {
-      //   fl = fl + 25;
-      // }
-      // if (br > 0)
-      // {
-      //   br = br + 25;
-      // }
-      // if (bl > 0)
-      // {
-      //   bl = bl + 25;
-      // }
-      // if (fr < 0)
-      // {
-      //   fr = fr - 25;
-      // }
-      // if (fl < 0)
-      // {
-      //   fl = fl - 25;
-      // }
-      // if (br < 0)
-      // {
-      //   br = br - 25;
-      // }
-      // if (bl < 0)
-      // {
-      //   bl = bl - 25;
-      // }
+      float fr = (float)fright;
+      float fl = (float)fleft;
+      float bl = (float)bleft;
+      float br = (float)bright;
 
       Serial.print("Received floats: FR: ");
       Serial.print(fr);
@@ -337,17 +72,112 @@ void loop()
       Serial.print(bl);
       Serial.print(" BR: ");
       Serial.println(br);
-      if (fr < 255 && br < 255 && bl < 255 && fl < 255)
+      // // Print
+      if (fr > 0 && fr < 25)
       {
-        motor1.setSpeed(fr * 1);
-        motor2.setSpeed(br * 1);
-        motor3.setSpeed(bl * 1);
-        motor4.setSpeed(fl * 1);
+        float ratio = 26 / fr;
+        fr = fr * ratio;
+        fl = fl * ratio;
+        bl = bl * ratio;
+        br = br * ratio;
+      }
+      if (fr < 0 && fr > -25)
+      {
+        float ratio = -26 / fr;
+        fr = fr * ratio;
+        fl = fl * ratio;
+        bl = bl * ratio;
+        br = br * ratio;
+      }
+      if (fl > 0 && fl < 25)
+      {
+        float ratio = 26 / fl;
+        fr = fr * ratio;
+        fl = fl * ratio;
+        bl = bl * ratio;
+        br = br * ratio;
+      }
+      if (fl < 0 && fl > -25)
+      {
+        float ratio = -26 / fl;
+        fr = fr * ratio;
+        fl = fl * ratio;
+        bl = bl * ratio;
+        br = br * ratio;
+      }
+      if (bl > 0 && bl < 25)
+      {
+        float ratio = 26 / bl;
+        fr = fr * ratio;
+        fl = fl * ratio;
+        bl = bl * ratio;
+        br = br * ratio;
+      }
+      if (bl < 0 && bl > -25)
+      {
+        float ratio = -26 / bl;
+        fr = fr * ratio;
+        fl = fl * ratio;
+        bl = bl * ratio;
+        br = br * ratio;
+      }
+      if (br > 0 && br < 25)
+      {
+        float ratio = 26 / br;
+        fr = fr * ratio;
+        fl = fl * ratio;
+        bl = bl * ratio;
+        br = br * ratio;
+      }
+      if (br < 0 && br > -25)
+      {
+        float ratio = -26 / br;
+        fr = fr * ratio;
+        fl = fl * ratio;
+        bl = bl * ratio;
+        br = br * ratio;
+      }
+
+      if (fr > 250 || fr < -250)
+      {
+        fr = 0;
+      }
+      if (fl > 250 || fl < -250)
+      {
+        fl = 0;
+      }
+      if (br > 250 || br < -250)
+      {
+        br = 0;
+      }
+      if (bl > 250 || bl < -250)
+      {
+        bl = 0;
+      }
+      fright = (int)fr;
+      fleft = (int)fl;
+      bleft = (int)bl;
+      bright = (int)br;
+
+      Serial.print("Modified floats: FR: ");
+      Serial.print(fright);
+      Serial.print(" FL: ");
+      Serial.print(fleft);
+      Serial.print(" BL: ");
+      Serial.print(bleft);
+      Serial.print(" BR: ");
+      Serial.println(bright);
+      if (fr < 255 || br < 255 || bl < 255 || fl < 255)
+      {
+        motor1.setSpeed(fright * 1);
+        motor2.setSpeed(bright * 1);
+        motor3.setSpeed(bleft * 1);
+        motor4.setSpeed(fleft * 1);
         delay(950);
-        motor1.setSpeed(fr * 0);
-        motor2.setSpeed(br * 0);
-        motor3.setSpeed(bl * 0);
-        motor4.setSpeed(fl * 0);
+        motor1.setSpeed(0);
+        motor2.setSpeed(0);
+        motor3.setSpeed(0);
+        motor4.setSpeed(0);
       }
       ndx = 0;
       isDataComplete = false;
