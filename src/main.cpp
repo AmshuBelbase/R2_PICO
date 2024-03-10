@@ -173,11 +173,11 @@ void loop()
         motor2.setSpeed(bright * 1);
         motor3.setSpeed(bleft * 1);
         motor4.setSpeed(fleft * 1);
-        delay(950);
-        motor1.setSpeed(0);
-        motor2.setSpeed(0);
-        motor3.setSpeed(0);
-        motor4.setSpeed(0);
+        // delay(950);
+        // motor1.setSpeed(0);
+        // motor2.setSpeed(0);
+        // motor3.setSpeed(0);
+        // motor4.setSpeed(0);
       }
       ndx = 0;
       isDataComplete = false;
