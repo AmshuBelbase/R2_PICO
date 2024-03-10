@@ -59,39 +59,275 @@ void loop()
       strtokIndex = strtok(NULL, "|");
       int br = atoi(strtokIndex); // back_right
 
-      // Print
-      if (fr > 0)
+      // // Print
+      if (fr > 0 && fr < 25)
       {
         fr = fr + 25;
+        if (fl > 0)
+        {
+          fl = fl + 25;
+        }
+        if (bl > 0)
+        {
+          bl = bl + 25;
+        }
+        if (br > 0)
+        {
+          br = br + 25;
+        }
+
+        if (fl < 0)
+        {
+          fl = fl - 25;
+        }
+        if (bl < 0)
+        {
+          bl = bl - 25;
+        }
+        if (br < 0)
+        {
+          br = br - 25;
+        }
       }
-      if (fl > 0)
-      {
-        fl = fl + 25;
-      }
-      if (br > 0)
-      {
-        br = br + 25;
-      }
-      if (bl > 0)
-      {
-        bl = bl + 25;
-      }
-      if (fr < 0)
+      if (fr < 0 && fr > -25)
       {
         fr = fr - 25;
+        if (fl > 0)
+        {
+          fl = fl + 25;
+        }
+        if (bl > 0)
+        {
+          bl = bl + 25;
+        }
+        if (br > 0)
+        {
+          br = br + 25;
+        }
+
+        if (fl < 0)
+        {
+          fl = fl - 25;
+        }
+        if (bl < 0)
+        {
+          bl = bl - 25;
+        }
+        if (br < 0)
+        {
+          br = br - 25;
+        }
       }
-      if (fl < 0)
+
+      if (fl > 0 && fl < 25)
+      {
+        fl = fl + 25;
+        if (fr > 0)
+        {
+          fr = fr + 25;
+        }
+        if (bl > 0)
+        {
+          bl = bl + 25;
+        }
+        if (br > 0)
+        {
+          br = br + 25;
+        }
+
+        if (fr < 0)
+        {
+          fr = fr - 25;
+        }
+        if (bl < 0)
+        {
+          bl = bl - 25;
+        }
+        if (br < 0)
+        {
+          br = br - 25;
+        }
+      }
+      if (fl < 0 && fl > -25)
       {
         fl = fl - 25;
+        if (fr > 0)
+        {
+          fr = fr + 25;
+        }
+        if (bl > 0)
+        {
+          bl = bl + 25;
+        }
+        if (br > 0)
+        {
+          br = br + 25;
+        }
+
+        if (fr < 0)
+        {
+          fr = fr - 25;
+        }
+        if (bl < 0)
+        {
+          bl = bl - 25;
+        }
+        if (br < 0)
+        {
+          br = br - 25;
+        }
       }
-      if (br < 0)
+
+      if (bl > 0 && bl < 25)
       {
-        br = br - 25;
+        bl = bl + 25;
+        if (fr > 0)
+        {
+          fr = fr + 25;
+        }
+        if (fl > 0)
+        {
+          fl = fl + 25;
+        }
+        if (br > 0)
+        {
+          br = br + 25;
+        }
+
+        if (fr < 0)
+        {
+          fr = fr - 25;
+        }
+        if (fl < 0)
+        {
+          fl = fl - 25;
+        }
+        if (br < 0)
+        {
+          br = br - 25;
+        }
       }
-      if (bl < 0)
+      if (bl < 0 && bl > -25)
       {
         bl = bl - 25;
+        if (fr > 0)
+        {
+          fr = fr + 25;
+        }
+        if (fl > 0)
+        {
+          fl = fl + 25;
+        }
+        if (br > 0)
+        {
+          br = br + 25;
+        }
+
+        if (fr < 0)
+        {
+          fr = fr - 25;
+        }
+        if (fl < 0)
+        {
+          fl = fl - 25;
+        }
+        if (br < 0)
+        {
+          br = br - 25;
+        }
       }
+
+      if (br > 0 && br < 25)
+      {
+        br = br + 25;
+        if (fr > 0)
+        {
+          fr = fr + 25;
+        }
+        if (fl > 0)
+        {
+          fl = fl + 25;
+        }
+        if (bl > 0)
+        {
+          bl = bl + 25;
+        }
+
+        if (fr < 0)
+        {
+          fr = fr - 25;
+        }
+        if (fl < 0)
+        {
+          fl = fl - 25;
+        }
+        if (bl < 0)
+        {
+          bl = bl - 25;
+        }
+      }
+      if (br < 0 && br > -25)
+      {
+        br = br - 25;
+        if (fr > 0)
+        {
+          fr = fr + 25;
+        }
+        if (fl > 0)
+        {
+          fl = fl + 25;
+        }
+        if (bl > 0)
+        {
+          bl = bl + 25;
+        }
+
+        if (fr < 0)
+        {
+          fr = fr - 25;
+        }
+        if (fl < 0)
+        {
+          fl = fl - 25;
+        }
+        if (bl < 0)
+        {
+          bl = bl - 25;
+        }
+      }
+
+      // if (fr > 0)
+      // {
+      //   fr = fr + 25;
+      // }
+      // if (fl > 0)
+      // {
+      //   fl = fl + 25;
+      // }
+      // if (br > 0)
+      // {
+      //   br = br + 25;
+      // }
+      // if (bl > 0)
+      // {
+      //   bl = bl + 25;
+      // }
+      // if (fr < 0)
+      // {
+      //   fr = fr - 25;
+      // }
+      // if (fl < 0)
+      // {
+      //   fl = fl - 25;
+      // }
+      // if (br < 0)
+      // {
+      //   br = br - 25;
+      // }
+      // if (bl < 0)
+      // {
+      //   bl = bl - 25;
+      // }
 
       Serial.print("Received floats: FR: ");
       Serial.print(fr);
