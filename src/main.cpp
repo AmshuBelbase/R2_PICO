@@ -60,6 +60,39 @@ void loop()
       int br = atoi(strtokIndex); // back_right
 
       // Print
+      if (fr > 0)
+      {
+        fr = fr + 25;
+      }
+      if (fl > 0)
+      {
+        fl = fl + 25;
+      }
+      if (br > 0)
+      {
+        br = br + 25;
+      }
+      if (bl > 0)
+      {
+        bl = bl + 25;
+      }
+      if (fr < 0)
+      {
+        fr = fr - 25;
+      }
+      if (fl < 0)
+      {
+        fl = fl - 25;
+      }
+      if (br < 0)
+      {
+        br = br - 25;
+      }
+      if (bl < 0)
+      {
+        bl = bl - 25;
+      }
+
       Serial.print("Received floats: FR: ");
       Serial.print(fr);
       Serial.print(" FL: ");
@@ -68,15 +101,18 @@ void loop()
       Serial.print(bl);
       Serial.print(" BR: ");
       Serial.println(br);
-      motor1.setSpeed(fr * 1);
-      motor2.setSpeed(br * 1);
-      motor3.setSpeed(bl * 1);
-      motor4.setSpeed(fl * 1);
-      // delay(950);
-      // motor1.setSpeed(fr * 0);
-      // motor2.setSpeed(br * 0);
-      // motor3.setSpeed(bl * 0);
-      // motor4.setSpeed(fl * 0);
+      if (fr < 255 && br < 255 && bl < 255 && fl < 255)
+      {
+        motor1.setSpeed(fr * 1);
+        motor2.setSpeed(br * 1);
+        motor3.setSpeed(bl * 1);
+        motor4.setSpeed(fl * 1);
+        delay(950);
+        motor1.setSpeed(fr * 0);
+        motor2.setSpeed(br * 0);
+        motor3.setSpeed(bl * 0);
+        motor4.setSpeed(fl * 0);
+      }
       ndx = 0;
       isDataComplete = false;
     }
