@@ -20,10 +20,12 @@ void loop()
   byte ndx = 0;
   char endMarker = '#';
   bool isDataComplete = false;
-
+  motor1.setSpeed(0);
+  motor2.setSpeed(0);
+  motor3.setSpeed(0);
+  motor4.setSpeed(0);
   while (true)
   {
-
     while (Serial.available() > 0 && !isDataComplete)
     {
       char rc = Serial.read();
@@ -73,7 +75,7 @@ void loop()
       Serial.print(" BR: ");
       Serial.println(br);
       // // Print
-      if (fr > 0 && fr < 25)
+      if (fr > 0 && fr < 26)
       {
         float ratio = 26 / fr;
         fr = fr * ratio;
@@ -81,7 +83,7 @@ void loop()
         bl = bl * ratio;
         br = br * ratio;
       }
-      if (fr < 0 && fr > -25)
+      if (fr < 0 && fr > -26)
       {
         float ratio = -26 / fr;
         fr = fr * ratio;
@@ -89,7 +91,7 @@ void loop()
         bl = bl * ratio;
         br = br * ratio;
       }
-      if (fl > 0 && fl < 25)
+      if (fl > 0 && fl < 26)
       {
         float ratio = 26 / fl;
         fr = fr * ratio;
@@ -97,7 +99,7 @@ void loop()
         bl = bl * ratio;
         br = br * ratio;
       }
-      if (fl < 0 && fl > -25)
+      if (fl < 0 && fl > -26)
       {
         float ratio = -26 / fl;
         fr = fr * ratio;
@@ -105,7 +107,7 @@ void loop()
         bl = bl * ratio;
         br = br * ratio;
       }
-      if (bl > 0 && bl < 25)
+      if (bl > 0 && bl < 26)
       {
         float ratio = 26 / bl;
         fr = fr * ratio;
@@ -113,7 +115,7 @@ void loop()
         bl = bl * ratio;
         br = br * ratio;
       }
-      if (bl < 0 && bl > -25)
+      if (bl < 0 && bl > -26)
       {
         float ratio = -26 / bl;
         fr = fr * ratio;
@@ -121,7 +123,7 @@ void loop()
         bl = bl * ratio;
         br = br * ratio;
       }
-      if (br > 0 && br < 25)
+      if (br > 0 && br < 26)
       {
         float ratio = 26 / br;
         fr = fr * ratio;
@@ -129,7 +131,7 @@ void loop()
         bl = bl * ratio;
         br = br * ratio;
       }
-      if (br < 0 && br > -25)
+      if (br < 0 && br > -26)
       {
         float ratio = -26 / br;
         fr = fr * ratio;
@@ -173,11 +175,11 @@ void loop()
         motor2.setSpeed(bright * 1);
         motor3.setSpeed(bleft * 1);
         motor4.setSpeed(fleft * 1);
-        // delay(950);
-        // motor1.setSpeed(0);
-        // motor2.setSpeed(0);
-        // motor3.setSpeed(0);
-        // motor4.setSpeed(0);
+        delay(500);
+        motor1.setSpeed(0);
+        motor2.setSpeed(0);
+        motor3.setSpeed(0);
+        motor4.setSpeed(0);
       }
       ndx = 0;
       isDataComplete = false;
