@@ -61,10 +61,10 @@ void loop()
       strtokIndex = strtok(NULL, "|");
       int bright = atoi(strtokIndex); // back_right
 
-      float fr = (float)fright;
-      float fl = (float)fleft;
-      float bl = (float)bleft;
-      float br = (float)bright;
+      float fr = (float)fright / 1.5;
+      float fl = (float)fleft / 1.5;
+      float bl = (float)bleft / 1.5;
+      float br = (float)bright / 1.5;
 
       Serial.print("Received floats: FR: ");
       Serial.print(fr);
@@ -77,29 +77,29 @@ void loop()
       // // Print
       int dela = 50;
       int thres = 30;
-
-      if (fr > 5 && fr < thres)
+      int val_thre = 1; // 7
+      if (fr > val_thre && fr < thres)
       {
         fr = thres;
         fl = 0;
         br = 0;
         // dela = fr * 20;
       }
-      if (bl > 5 && bl < thres)
+      if (bl > val_thre && bl < thres)
       {
         bl = thres;
         fl = 0;
         br = 0;
         // dela = bl * 20;
       }
-      if (fr < -5 && fr > -thres)
+      if (fr < -val_thre && fr > -thres)
       {
         fr = -thres;
         fl = 0;
         br = 0;
         // dela = -fr * 20;
       }
-      if (bl < -5 && bl > -thres)
+      if (bl < -val_thre && bl > -thres)
       {
         bl = -thres;
         fl = 0;
@@ -107,19 +107,19 @@ void loop()
         // dela = -bl * 20;
       }
 
-      if (fl > 5 && fl < thres)
+      if (fl > val_thre && fl < thres)
       {
         fl = thres;
       }
-      if (br > 5 && br < thres)
+      if (br > val_thre && br < thres)
       {
         br = thres;
       }
-      if (fl < -5 && fl > -thres)
+      if (fl < -val_thre && fl > -thres)
       {
         fl = -thres;
       }
-      if (br < -5 && br > -thres)
+      if (br < -val_thre && br > -thres)
       {
         br = -thres;
       }
