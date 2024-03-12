@@ -75,87 +75,161 @@ void loop()
       Serial.print(" BR: ");
       Serial.println(br);
       // // Print
-      if (fr > 0 && fr < 26)
+      int dela = 600;
+      int thres = 30;
+      // if ((fr > 1 && fr < thres) || (fr < -1 && fr > -thres))
+      // {
+      //   fr = fr * 2;
+      //   bl = 0;
+      //   dela = 200;
+      // }
+      // if ((fl > 1 && fl < thres) || (fl < -1 && fl > -thres))
+      // {
+      //   fl = fl * 2;
+      //   br = 0;
+      //   dela = 200;
+      // }
+      // if ((bl > 1 && bl < thres) || (bl < -1 && bl > -thres))
+      // {
+      //   bl = bl * 2;
+      //   fr = 0;
+      //   dela = 200;
+      // }
+      // if ((br > 1 && br < thres) || (br < -1 && br > -thres))
+      // {
+      //   br = br * 2;
+      //   fl = 0;
+      //   dela = 200;
+      // }
+
+      // Serial.print("Semi Modified floats: FR: ");
+      // Serial.print(fr);
+      // Serial.print(" FL: ");
+      // Serial.print(fl);
+      // Serial.print(" BL: ");
+      // Serial.print(bl);
+      // Serial.print(" BR: ");
+      // Serial.println(br);
+
+      if (fr > 5 && fr < thres)
       {
-        float ratio = 26 / fr;
-        fr = fr * ratio;
-        fl = fl * ratio;
-        bl = bl * ratio;
-        br = br * ratio;
+        fr = thres;
+        fl = 0;
+        br = 0;
+        dela = fr * 20;
       }
-      if (fr < 0 && fr > -26)
+      if (bl > 5 && bl < thres)
       {
-        float ratio = -26 / fr;
-        fr = fr * ratio;
-        fl = fl * ratio;
-        bl = bl * ratio;
-        br = br * ratio;
+        bl = thres;
+        fl = 0;
+        br = 0;
+        dela = bl * 20;
       }
-      if (fl > 0 && fl < 26)
+      if (fr < -5 && fr > -thres)
       {
-        float ratio = 26 / fl;
-        fr = fr * ratio;
-        fl = fl * ratio;
-        bl = bl * ratio;
-        br = br * ratio;
+        fr = -thres;
+        fl = 0;
+        br = 0;
+        dela = -fr * 20;
       }
-      if (fl < 0 && fl > -26)
+      if (bl < -5 && bl > -thres)
       {
-        float ratio = -26 / fl;
-        fr = fr * ratio;
-        fl = fl * ratio;
-        bl = bl * ratio;
-        br = br * ratio;
-      }
-      if (bl > 0 && bl < 26)
-      {
-        float ratio = 26 / bl;
-        fr = fr * ratio;
-        fl = fl * ratio;
-        bl = bl * ratio;
-        br = br * ratio;
-      }
-      if (bl < 0 && bl > -26)
-      {
-        float ratio = -26 / bl;
-        fr = fr * ratio;
-        fl = fl * ratio;
-        bl = bl * ratio;
-        br = br * ratio;
-      }
-      if (br > 0 && br < 26)
-      {
-        float ratio = 26 / br;
-        fr = fr * ratio;
-        fl = fl * ratio;
-        bl = bl * ratio;
-        br = br * ratio;
-      }
-      if (br < 0 && br > -26)
-      {
-        float ratio = -26 / br;
-        fr = fr * ratio;
-        fl = fl * ratio;
-        bl = bl * ratio;
-        br = br * ratio;
+        bl = -thres;
+        fl = 0;
+        br = 0;
+        dela = -bl * 20;
       }
 
-      if (fr > 250 || fr < -250)
+      if (fl > 5 && fl < thres)
+      {
+        fl = thres;
+      }
+      if (br > 5 && br < thres)
+      {
+        br = thres;
+      }
+      if (fl < -5 && fl > -thres)
+      {
+        fl = -thres;
+      }
+      if (br < -5 && br > -thres)
+      {
+        br = -thres;
+      }
+
+      // if (fr > 1 && fr < thres)
+      // {
+      //   float ratio = thres / fr;
+      //   fr = fr * ratio;
+      //   fl = fl * ratio;
+      //   bl = bl * ratio;
+      //   br = br * ratio;
+      // }
+      // if (fr < -1 && fr > -thres)
+      // {
+      //   float ratio = -thres / fr;
+      //   fr = fr * ratio;
+      //   fl = fl * ratio;
+      //   bl = bl * ratio;
+      //   br = br * ratio;
+      // }
+      // if (fl > 1 && fl < thres)
+      // {
+      //   float ratio = thres / fl;
+      //   fr = fr * ratio;
+      //   fl = fl * ratio;
+      //   bl = bl * ratio;
+      //   br = br * ratio;
+      // }
+      // if (fl < -1 && fl > -thres)
+      // {
+      //   float ratio = -thres / fl;
+      //   fr = fr * ratio;
+      //   fl = fl * ratio;
+      //   bl = bl * ratio;
+      //   br = br * ratio;
+      // }
+      // if (bl > 1 && bl < thres)
+      // {
+      //   float ratio = thres / bl;
+      //   fr = fr * ratio;
+      //   fl = fl * ratio;
+      //   bl = bl * ratio;
+      //   br = br * ratio;
+      // }
+      // if (bl < -1 && bl > -thres)
+      // {
+      //   float ratio = -thres / bl;
+      //   fr = fr * ratio;
+      //   fl = fl * ratio;
+      //   bl = bl * ratio;
+      //   br = br * ratio;
+      // }
+      // if (br > 1 && br < thres)
+      // {
+      //   float ratio = thres / br;
+      //   fr = fr * ratio;
+      //   fl = fl * ratio;
+      //   bl = bl * ratio;
+      //   br = br * ratio;
+      // }
+      // if (br < -1 && br > -thres)
+      // {
+      //   float ratio = -thres / br;
+      //   fr = fr * ratio;
+      //   fl = fl * ratio;
+      //   bl = bl * ratio;
+      //   br = br * ratio;
+      // }
+
+      if (fr > 250 || fr < -250 || fl > 250 || fl < -250 || br > 250 || br < -250 || bl > 250 || bl < -250)
       {
         fr = 0;
-      }
-      if (fl > 250 || fl < -250)
-      {
         fl = 0;
-      }
-      if (br > 250 || br < -250)
-      {
         br = 0;
-      }
-      if (bl > 250 || bl < -250)
-      {
         bl = 0;
       }
+
       fright = (int)fr;
       fleft = (int)fl;
       bleft = (int)bl;
@@ -169,17 +243,21 @@ void loop()
       Serial.print(bleft);
       Serial.print(" BR: ");
       Serial.println(bright);
-      if (fr < 255 || br < 255 || bl < 255 || fl < 255)
+      if ((fr < 255 && br < 255 && bl < 255 && fl < 255) && (fr > -255 && br > -255 && bl > -255 && fl > -255))
       {
         motor1.setSpeed(fright * 1);
         motor2.setSpeed(bright * 1);
         motor3.setSpeed(bleft * 1);
         motor4.setSpeed(fleft * 1);
-        delay(500);
+        delay(dela);
         motor1.setSpeed(0);
         motor2.setSpeed(0);
         motor3.setSpeed(0);
         motor4.setSpeed(0);
+      }
+      else
+      {
+        Serial.println("Closing MOTORS");
       }
       ndx = 0;
       isDataComplete = false;
